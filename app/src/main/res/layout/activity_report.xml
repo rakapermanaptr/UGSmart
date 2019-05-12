@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature.report.ReportActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Report"
+            android:textSize="36sp"
+            android:fontFamily="@font/futura_medium"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:id="@+id/tvReport"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/report_slogan"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tvReport"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotoslab_light"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp">
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtFullname"
+                    android:layout_width="match_parent"
+                    android:hint="Fullname"
+                    android:inputType="textCapWords"
+                    android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtNpm"
+                    android:hint="@string/npm"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtSubject"
+                    android:layout_width="match_parent"
+                    android:hint="@string/subject"
+                    android:inputType="textCapWords"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtComplaint"
+                    android:layout_width="match_parent"
+                    android:hint="@string/complaint"
+                    android:inputType="textCapSentences"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtLocation"
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/ic_location_on_black_24dp"
+                    android:hint="@string/location"
+                    android:inputType="textCapSentences"
+                    android:drawablePadding="8dp"
+                    android:maxLength="30"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:text="@string/report"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:id="@+id/btnReport"
+            android:background="@drawable/rounded_primary"
+            android:textColor="@color/colorWhite"
+            android:layout_marginBottom="30dp"/>
+
+</RelativeLayout>

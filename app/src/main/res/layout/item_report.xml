@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/username"
+            android:textSize="14sp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textColor="@color/colorBlack"
+            android:id="@+id/tvUsername"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSubject"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            tools:text="Ac Rusak"
+            android:layout_marginTop="16dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvComplaint"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            tools:text="@string/complaint_user"
+            android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_location_on_black_14dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/location_complaint"
+                android:textColor="@color/colorBlack"
+                android:textSize="10sp"
+                android:id="@+id/tvLocation"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:layout_marginLeft="8dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="fixed"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="10sp"
+                android:gravity="end"
+                android:id="@+id/tvNote"
+                android:textStyle="italic"/>
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

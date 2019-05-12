@@ -1,0 +1,17 @@
+package com.example.ugsmart.feature.career
+
+import com.example.ugsmart.model.News
+
+interface CareerCenterContract {
+
+    interface View {
+        fun showLoading()
+        fun hideLoading()
+        fun showAllCareer(careers: List<News>)
+    }
+
+    interface Presenter {
+        fun getAllCareer()
+        fun onDestroy()
+    }
+}

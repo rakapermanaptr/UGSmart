@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home"
+                android:title="@string/home"/>
+
+        <item
+                android:id="@+id/nav_report"
+                android:icon="@drawable/ic_report_problem_black_24dp"
+                android:title="@string/reports"/>
+
+        <item
+                android:id="@+id/nav_news"
+                android:icon="@drawable/ic_news"
+                android:title="@string/news"/>
+
+        <item
+                android:id="@+id/nav_event"
+                android:icon="@drawable/ic_event"
+                android:title="@string/event_and_seminar"/>
+
+        <item
+                android:id="@+id/nav_careerCenter"
+                android:icon="@drawable/ic_job"
+                android:title="@string/career_center"/>
+
+    </group>
+
+    <group
+            android:checkableBehavior="single"
+            android:id="@+id/group_reminder">
+
+        <item
+                android:id="@+id/nav_reminder"
+                android:icon="@drawable/ic_reminder"
+                android:title="@string/reminder"/>
+
+    </group>
+
+    <item
+            android:id="@+id/nav_aboutUs"
+            android:icon="@drawable/ic_about"
+            android:title="@string/about"/>
+
+</menu>

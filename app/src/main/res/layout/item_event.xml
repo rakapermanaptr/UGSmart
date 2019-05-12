@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="145dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/imgPoster"
+                android:layout_width="86dp"
+                android:layout_height="121dp"
+                tools:src="@drawable/ic_launcher_background"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/seminar"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:textColor="@color/colorBlack"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waktu_tempat"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginTop="16dp"/>
+
+            <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jumat, 3 Mei 2019"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:layout_marginTop="8dp"/>
+
+            <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pukul 08.00 - selesai"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/location"/>
+
+                <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Kampus J6, Cikunir"
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:fontFamily="@font/roboto_condensed_regular"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorBlack"
+                android:layout_gravity="bottom"
+                android:layout_alignParentBottom="true"/>
+
+    </LinearLayout>
+
+</LinearLayout>

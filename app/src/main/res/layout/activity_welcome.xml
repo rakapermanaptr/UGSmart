@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WelcomeActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_above="@id/sloganApp"
+                android:layout_marginBottom="25dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo"/>
+
+        <LinearLayout
+                android:id="@+id/sloganApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/let_s_get_started"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/robotoslab_bold"/>
+
+            <TextView
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/slogan_app"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/robotoslab_light"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
