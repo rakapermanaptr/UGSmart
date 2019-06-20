@@ -26,11 +26,7 @@ class ReportsPresenter(
                 }
 
                 override fun onNext(t: ReportResponse) {
-                    if (t.reports == null) {
-                        view.hideLoading()
-                    } else {
-                        view.showReports(t.reports)
-                    }
+                    if (t.reports == null) view.hideLoading() else view.showReports(t.reports)
                 }
 
                 override fun onError(t: Throwable?) {

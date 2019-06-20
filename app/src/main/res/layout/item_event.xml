@@ -82,6 +82,8 @@
                         android:layout_height="match_parent"
                         android:text="Kampus J6, Cikunir"
                         android:textSize="10sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:fontFamily="@font/roboto_condensed_regular"/>
@@ -89,7 +91,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
     </LinearLayout>
 

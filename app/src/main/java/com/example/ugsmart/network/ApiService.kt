@@ -9,7 +9,7 @@ class ApiService {
     companion object {
         fun getClient(): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("http://192.168.100.9:8888/api-ugsmart/")
+                .baseUrl("http://10.236.108.102:8888/api-ugsmart/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()

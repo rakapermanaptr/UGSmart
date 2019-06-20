@@ -1,32 +1,31 @@
 package com.example.ugsmart.feature.detail
 
-import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.Menu
 import com.example.ugsmart.R
 import com.example.ugsmart.model.News
-import kotlinx.android.synthetic.main.activity_detail_news.*
+import kotlinx.android.synthetic.main.activity_detail_career.*
 
-class DetailNewsActivity : AppCompatActivity() {
+class DetailCareerActivity : AppCompatActivity() {
 
     private lateinit var data: News
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_news)
+        setContentView(R.layout.activity_detail_career)
 
-        supportActionBar?.title = "News"
+        supportActionBar?.title = "Career Center"
 
         data = intent.getParcelableExtra<News>("data")
 
         initData()
-
     }
 
-    private fun initData() {
+    fun initData() {
         tvTitle.text = data.title
         tvDate.text = data.date
         tvDescription.text = data.description
     }
-
 
 }

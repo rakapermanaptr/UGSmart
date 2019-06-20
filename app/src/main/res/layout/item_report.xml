@@ -70,6 +70,7 @@
                 tools:text="fixed"
                 android:fontFamily="@font/roboto_condensed_regular"
                 android:textSize="10sp"
+                android:paddingRight="8dp"
                 android:gravity="end"
                 android:id="@+id/tvNote"
                 android:textStyle="italic"/>

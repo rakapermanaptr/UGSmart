@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="120dp"
+              android:background="@drawable/border"
+              android:layout_marginRight="8dp"
+              android:layout_height="150dp">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:maxLines="2"
+            android:padding="8dp"
+            android:ellipsize="end"
+            tools:text="@string/news_title"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textAlignment="center"
+            android:textSize="9dp"
+            android:gravity="center"
+            android:id="@+id/tvHomeTitleEvent"/>
+
+    <TextView
+            android:id="@+id/tvHomeEvent"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:maxLines="7"
+            android:ellipsize="end"
+            android:padding="8dp"
+            android:text="@string/home_news"
+            android:textSize="8dp"
+            android:paddingBottom="4dp"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimary"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/admin"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10dp"
+            android:gravity="center"/>
+
+
+</LinearLayout>

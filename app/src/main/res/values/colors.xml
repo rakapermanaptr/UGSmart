@@ -6,5 +6,7 @@
     <color name="colorWhite">#FFFF</color>
     <color name="colorWhiteBold">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorBackgroundHomeNews">#DBDBDB</color>
+    <color name="colorHomeText">#333333</color>
 
 </resources>

@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:text="Build"
                         android:layout_below="@id/tvEmail"
-                        android:layout_marginTop="36dp"
+                        android:layout_marginTop="26dp"
                         android:fontFamily="@font/roboto_condensed_bold"
                         android:textSize="14sp"
                         android:textColor="@color/colorBlack"
@@ -129,7 +129,7 @@
                         android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="14sp"
                         android:layout_below="@id/tvEmailUser"
-                        android:layout_marginTop="36dp"
+                        android:layout_marginTop="26dp"
                         android:id="@+id/tvBuildDate"
                         android:layout_alignParentRight="true"/>
 
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:text="Version"
                         android:layout_below="@id/tvBuild"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:fontFamily="@font/roboto_condensed_bold"
                         android:textSize="14sp"
                         android:textColor="@color/colorBlack"
@@ -151,7 +151,7 @@
                         android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="14sp"
                         android:layout_below="@id/tvBuildDate"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:id="@+id/tvVersionNumber"
                         android:layout_alignParentRight="true"/>
 

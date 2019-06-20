@@ -1,11 +1,14 @@
 package com.example.ugsmart.model.repository
 
+import com.example.ugsmart.model.BannerDataResponse
 import com.example.ugsmart.model.EventResponse
 import com.example.ugsmart.model.NewsResponse
 import com.example.ugsmart.network.ApiRest
 import io.reactivex.Flowable
 
 class NewsRepoImpl(private val apiRest: ApiRest) : NewsRepo {
+
+    override fun getAllBannerData(): Flowable<BannerDataResponse> = apiRest.getBannerData()
 
     override fun getAllEvents(): Flowable<EventResponse> = apiRest.getAllEvents()
 

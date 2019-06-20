@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ugsmart.R
+import com.example.ugsmart.adapter.CareerAdapter
 import com.example.ugsmart.adapter.NewsAdapter
 import com.example.ugsmart.model.News
 import com.example.ugsmart.model.repository.NewsRepoImpl
@@ -57,7 +58,7 @@ class CareerCenterFragment : Fragment(), CareerCenterContract.View {
         careerList.addAll(careers)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rvNews.layoutManager = linearLayoutManager
-        rvNews.adapter = NewsAdapter(requireContext(), careers)
+        rvNews.adapter = CareerAdapter(requireContext(), careers)
     }
 
     override fun onDestroy() {

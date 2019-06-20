@@ -4,29 +4,181 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:id="@+id/contain_home"
-             tools:context=".feature.HomeFragment">
+             tools:context=".feature.home.HomeFragment">
 
-    <LinearLayout
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/banner"
-                android:scaleType="centerCrop"
-                android:padding="36dp"/>
-
-        <android.support.v7.widget.RecyclerView
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/rvHome"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center"/>
+                android:orientation="vertical">
 
-    </LinearLayout>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/banner"
+                    android:scaleType="centerCrop"
+                    android:padding="36dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ug_news"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvUgNewsHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_marginTop="16dp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_margin="8dp"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/rektor"
+                                android:scaleType="centerCrop"
+                                android:id="@+id/imgRektor"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/sambutan_rektor"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold"/>
+
+                            <TextView
+                                    android:id="@+id/tvRectorGreeting"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:ellipsize="end"
+                                    android:maxLines="3"
+                                    tools:text="@string/exp_sambutan"
+                                    android:fontFamily="@font/roboto_condensed_regular"
+                                    android:textSize="8sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                            android:id="@+id/tvRectorName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:text="@string/rektor_name"
+                            android:textSize="8dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:padding="8dp"
+                            android:textColor="@color/colorWhite"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:orientation="vertical"
+                        android:background="@color/colorBackgroundHomeNews">
+
+                    <TextView
+                            android:id="@+id/tvAnnouncementTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Pendaftaran Mahasiswa Baru"
+                            android:textColor="@color/colorHomeText"
+                            android:layout_margin="8dp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/tvAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:text="@string/home_news"
+                            android:textSize="10dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:maxLines="7"
+                            android:ellipsize="end"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/roboto_condensed_regular"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_seminar"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginRight="16dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvEventSeminarHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

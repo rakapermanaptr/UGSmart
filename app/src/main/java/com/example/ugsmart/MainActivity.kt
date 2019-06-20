@@ -8,7 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.example.ugsmart.feature.HomeFragment
+import com.example.ugsmart.feature.home.HomeFragment
 import com.example.ugsmart.feature.about.AboutFragment
 import com.example.ugsmart.feature.career.CareerCenterFragment
 import com.example.ugsmart.feature.event.EventFragment

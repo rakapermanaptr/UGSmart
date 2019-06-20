@@ -1,5 +1,6 @@
 package com.example.ugsmart.network
 
+import com.example.ugsmart.model.BannerDataResponse
 import com.example.ugsmart.model.EventResponse
 import com.example.ugsmart.model.NewsResponse
 import com.example.ugsmart.model.ReportResponse
@@ -10,6 +11,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiRest {
+
+    @GET("banner.php")
+    fun getBannerData(): Flowable<BannerDataResponse>
 
     @GET("event.php")
     fun getAllEvents(): Flowable<EventResponse>

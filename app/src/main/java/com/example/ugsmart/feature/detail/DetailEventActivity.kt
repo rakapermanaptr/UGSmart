@@ -2,6 +2,7 @@ package com.example.ugsmart.feature.detail
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import com.bumptech.glide.Glide
 import com.example.ugsmart.R
 import com.example.ugsmart.model.Event
@@ -10,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_detail_event.*
 class DetailEventActivity : AppCompatActivity() {
 
     private lateinit var data: Event
+    private var menuItem: Menu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +19,7 @@ class DetailEventActivity : AppCompatActivity() {
 
         data = intent.getParcelableExtra("data")
 
-        supportActionBar?.title = data.title
+        supportActionBar?.title = "Event and Seminar"
 
         initData()
     }
@@ -31,4 +33,5 @@ class DetailEventActivity : AppCompatActivity() {
             .load(data.url)
             .into(imgPoster)
     }
+
 }

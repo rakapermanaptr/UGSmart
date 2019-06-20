@@ -53,4 +53,13 @@
     <string name="grid_title">List of Report</string>
     <string name="email_user">rakapermanaputraa@gmail.com</string>
     <string name="npm_user">16116026</string>
+    <string name="ug_news">UG News</string>
+    <string name="event_seminar">Event and Seminar</string>
+    <string name="exp_sambutan">Tak terasa Sudan lebih Dari 30 the Universitas Gunadarma telah…</string>
+    <string name="sambutan_rektor">Sambutan Rektor</string>
+    <string name="rektor_name">Prof. Dr. E.S. Margianti, SE.,MM.</string>
+    <string name="home_news">Pendaftaran Mahasiswa Baru Universitas Gunadarma tahun ajaran 2018/2019 telah dibuka, anda dapat mengunjungi counter pendaftaran yang ada di Kampus kami atau dapat mengakses Pendaftaran UG Untuk keterangan lebih lanjut. Anda juga dapat menghubungi CALL CENTER 1500158 untuk mendapatkan informasi tentang pendaftaran.</string>
+    <string name="news_title">Bidikmisi Universitas Gunadarma 2019</string>
+    <string name="admin">ADMIN</string>
+    <string name="bookmark">Bookmark</string>
 </resources>
