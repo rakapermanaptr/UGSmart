@@ -19,17 +19,8 @@ import com.example.ugsmart.utils.visible
 import kotlinx.android.synthetic.main.fragment_reports.*
 import org.jetbrains.anko.support.v4.startActivity
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class ReportsFragment : Fragment(), ReportsContract.View {
+
 
     private lateinit var presenter: ReportsPresenter
     private var reports: MutableList<Report> = mutableListOf()
@@ -39,13 +30,10 @@ class ReportsFragment : Fragment(), ReportsContract.View {
 
         activity?.title = "Reports"
 
-        val service = ApiService.getClient().create(ApiRest::class.java)
-        val request = ReportRepoImpl(service)
-        presenter = ReportsPresenter(this, request)
+        presenter = ReportsPresenter(this)
         presenter.getReports()
 
         fab.setOnClickListener { startActivity<ReportActivity>() }
-
     }
 
     override fun showLoading() {
@@ -58,7 +46,8 @@ class ReportsFragment : Fragment(), ReportsContract.View {
         rvReports.visible()
     }
 
-    override fun showReports(report: List<Report>) {
+    override fun showReports(report: MutableList<Report>) {
+        report.reverse()
         reports.clear()
         reports.addAll(report)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
@@ -66,16 +55,10 @@ class ReportsFragment : Fragment(), ReportsContract.View {
         rvReports.adapter = ReportsAdapter(requireContext(), reports)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
-    }
-
     override fun onResume() {
         super.onResume()
         presenter.getReports()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

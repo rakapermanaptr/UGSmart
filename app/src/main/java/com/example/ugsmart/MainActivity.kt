@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         if (savedInstanceState == null) {
-            var fragment: Fragment = HomeFragment()
+            var fragment: Fragment = ReportsFragment()
             supportFragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
         }
     }
@@ -69,19 +69,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                fragment = HomeFragment()
+//                fragment = HomeFragment()
             }
             R.id.nav_report -> {
                 fragment = ReportsFragment()
             }
             R.id.nav_news -> {
-                fragment = NewsFragment()
+//                fragment = NewsFragment()
             }
             R.id.nav_event -> {
-                fragment = EventFragment()
+//                fragment = EventFragment()
             }
             R.id.nav_careerCenter -> {
-                fragment = CareerCenterFragment()
+//                fragment = CareerCenterFragment()
             }
             R.id.nav_reminder -> {
                 toast("Upcoming Feature")

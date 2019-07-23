@@ -1,5 +1,7 @@
 package com.example.ugsmart.feature.report
 
+import com.example.ugsmart.model.Report
+
 interface ReportContract {
 
     interface View {
@@ -7,7 +9,6 @@ interface ReportContract {
     }
 
     interface Presenter {
-        fun postReport(fullname: String, npm: String, subject: String, complaint: String, location: String)
-        fun onDestroy()
+        fun postReport(report: Report)
     }
 }

@@ -1,44 +1,25 @@
 package com.example.ugsmart.feature.report
 
-import android.util.Log
-import com.example.ugsmart.model.ReportResponse
-import com.example.ugsmart.model.repository.ReportRepoImpl
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.subscribers.ResourceSubscriber
+import com.example.ugsmart.model.Report
+import com.google.firebase.database.*
 
-class ReportPresenter(
-    private val view: ReportContract.View,
-    private val reportRepoImpl: ReportRepoImpl
-) : ReportContract.Presenter {
+class ReportPresenter(private val view: ReportContract.View) : ReportContract.Presenter {
 
-    val compositeDisposable = CompositeDisposable()
+    var database: FirebaseDatabase = FirebaseDatabase.getInstance()
 
-    override fun postReport(fullname: String, npm: String, subject: String, complaint: String, location: String) {
-        compositeDisposable.add(
-            reportRepoImpl.postReport(fullname, npm, subject, complaint, location)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribeWith(object : ResourceSubscriber<ReportResponse>() {
-                    override fun onComplete() {
-                        Log.i("onComplete", "Data has benn sent")
-                        view.postReport()
-                    }
+    override fun postReport(report: Report) {
+        var myRef: DatabaseReference = database.reference.child("reports").child(report.id_report!!)
+        myRef.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                dataSnapshot.ref.setValue(report)
+                view.postReport()
+            }
 
-                    override fun onNext(t: ReportResponse) {
-                        view.postReport()
-                    }
+            override fun onCancelled(databaseError: DatabaseError) {
 
-                    override fun onError(t: Throwable) {
-                        Log.e("onError Post", t.message)
-                    }
+            }
 
-                })
-        )
+        })
     }
 
-    override fun onDestroy() {
-        compositeDisposable.dispose()
-    }
 }

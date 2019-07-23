@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "163651473061",
+    "firebase_url": "https://ugsmart-ca7ee.firebaseio.com",
+    "project_id": "ugsmart-ca7ee",
+    "storage_bucket": "ugsmart-ca7ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163651473061:android:8eaad8ce0ca1c154",
+        "android_client_info": {
+          "package_name": "com.example.ugsmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163651473061-42db4j1s4m9e8amtr4490o32bdlpif8i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ugsmart",
+            "certificate_hash": "532ae80745c37dd508cfea42f35c305c318ccff1"
+          }
+        },
+        {
+          "client_id": "163651473061-0j9442np0c64eeqmo0nu98d0j1qerqa3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpyPurE_xhzK6T3pa9ZJOd3VJeDnfzt4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163651473061-0j9442np0c64eeqmo0nu98d0j1qerqa3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

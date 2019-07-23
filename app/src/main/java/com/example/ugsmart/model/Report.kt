@@ -1,11 +1,11 @@
 package com.example.ugsmart.model
 
 data class Report(
-    val id: String,
-    val fullname: String,
-    val npm: String,
-    val subject: String,
-    val complaint: String,
-    val location: String,
-    val note: String
+    val id_report: String? = null,
+    val fullname: String? = null,
+    val npm: String? = null,
+    val subject: String? = null,
+    val complaint: String? = null,
+    val location: String? = null,
+    val note: String? = null
 )

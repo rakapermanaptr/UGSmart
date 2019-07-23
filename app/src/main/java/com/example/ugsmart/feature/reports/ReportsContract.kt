@@ -7,12 +7,11 @@ interface ReportsContract {
     interface View {
         fun showLoading()
         fun hideLoading()
-        fun showReports(report: List<Report>)
+        fun showReports(report: MutableList<Report>)
     }
 
     interface Presenter {
         fun getReports()
-        fun onDestroy()
     }
 
 }
