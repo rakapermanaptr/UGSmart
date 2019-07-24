@@ -11,22 +11,10 @@ import android.view.ViewGroup
 import com.example.ugsmart.R
 import com.example.ugsmart.adapter.NewsAdapter
 import com.example.ugsmart.model.News
-import com.example.ugsmart.model.repository.NewsRepoImpl
-import com.example.ugsmart.network.ApiRest
-import com.example.ugsmart.network.ApiService
 import com.example.ugsmart.utils.invisible
 import com.example.ugsmart.utils.visible
 import kotlinx.android.synthetic.main.fragment_ug__news.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class UGNewsFragment : Fragment(), UGNewsContract.View {
 
     private lateinit var presenter: UGNewsPresenter
@@ -35,9 +23,7 @@ class UGNewsFragment : Fragment(), UGNewsContract.View {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val service = ApiService.getClient().create(ApiRest::class.java)
-        val request = NewsRepoImpl(service)
-        presenter = UGNewsPresenter(this, request)
+        presenter = UGNewsPresenter(this)
         presenter.getAllNews()
 
     }
@@ -52,17 +38,13 @@ class UGNewsFragment : Fragment(), UGNewsContract.View {
         rvNews.visible()
     }
 
-    override fun showAllNews(news: List<News>) {
+    override fun showAllNews(news: MutableList<News>) {
+        listNews.reverse()
         listNews.clear()
         listNews.addAll(news)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rvNews.layoutManager = linearLayoutManager
         rvNews.adapter = NewsAdapter(requireContext(), news)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
     }
 
     override fun onCreateView(

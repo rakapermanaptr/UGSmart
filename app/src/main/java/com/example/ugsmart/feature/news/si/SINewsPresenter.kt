@@ -1,44 +1,40 @@
 package com.example.ugsmart.feature.news.si
 
+import com.example.ugsmart.model.News
 import com.example.ugsmart.model.NewsResponse
 import com.example.ugsmart.model.repository.NewsRepoImpl
+import com.google.firebase.database.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subscribers.ResourceSubscriber
 import java.util.*
 
-class SINewsPresenter(
-    private val view: SINewsContract.View,
-    private val newsRepoImpl: NewsRepoImpl
-) : SINewsContract.Presenter {
+class SINewsPresenter(private val view: SINewsContract.View) : SINewsContract.Presenter {
 
-    val compositeDisposable = CompositeDisposable()
+    private var database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private var listSINews: MutableList<News> = mutableListOf()
 
     override fun getAllNews() {
         view.showLoading()
-        compositeDisposable.addAll(newsRepoImpl.getAllSINews()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribeWith(object : ResourceSubscriber<NewsResponse>() {
-                override fun onComplete() {
-                    view.hideLoading()
-                }
+        var myRef: DatabaseReference = database.reference.child("news").child("si")
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
 
-                override fun onNext(t: NewsResponse) {
-                    view.showAllNews(t.news)
-                }
+            }
 
-                override fun onError(t: Throwable?) {
-                    view.hideLoading()
-                    view.showAllNews(Collections.emptyList())
-                }
+            override fun onDataChange(p0: DataSnapshot) {
+                listSINews.clear()
 
-            })
-        )
+                for (dataSnapshot in p0.children) {
+                    val data = dataSnapshot.getValue(News::class.java)
+                    listSINews.add(data!!)
+                }
+                view.showAllNews(listSINews)
+                view.hideLoading()
+            }
+
+        })
     }
 
-    override fun onDestroy() {
-        compositeDisposable.dispose()
-    }
 }

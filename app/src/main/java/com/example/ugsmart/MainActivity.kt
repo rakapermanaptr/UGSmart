@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragment = ReportsFragment()
             }
             R.id.nav_news -> {
-//                fragment = NewsFragment()
+                fragment = NewsFragment()
             }
             R.id.nav_event -> {
 //                fragment = EventFragment()

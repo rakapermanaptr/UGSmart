@@ -7,11 +7,10 @@ interface SKNewsContract {
     interface View {
         fun showLoading()
         fun hideLoading()
-        fun showAllNews(news: List<News>)
+        fun showAllNews(news: MutableList<News>)
     }
 
     interface Presenter {
         fun getAllNews()
-        fun onDestroy()
     }
 }
