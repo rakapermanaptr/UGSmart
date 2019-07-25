@@ -18,15 +18,6 @@ import com.example.ugsmart.utils.invisible
 import com.example.ugsmart.utils.visible
 import kotlinx.android.synthetic.main.fragment_career_center.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class CareerCenterFragment : Fragment(), CareerCenterContract.View {
 
     private lateinit var presenter: CareerCenterPresenter
@@ -37,9 +28,7 @@ class CareerCenterFragment : Fragment(), CareerCenterContract.View {
 
         activity?.title = "Career Center"
 
-        val service = ApiService.getClient().create(ApiRest::class.java)
-        val request = NewsRepoImpl(service)
-        presenter = CareerCenterPresenter(this, request)
+        presenter = CareerCenterPresenter(this)
         presenter.getAllCareer()
     }
 
@@ -53,17 +42,12 @@ class CareerCenterFragment : Fragment(), CareerCenterContract.View {
         rvNews.visible()
     }
 
-    override fun showAllCareer(careers: List<News>) {
+    override fun showAllCareer(careers: MutableList<News>) {
         careerList.clear()
         careerList.addAll(careers)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rvNews.layoutManager = linearLayoutManager
         rvNews.adapter = CareerAdapter(requireContext(), careers)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
     }
 
     override fun onCreateView(

@@ -7,11 +7,10 @@ interface EventContract {
     interface View {
         fun showLoading()
         fun hideLoading()
-        fun showAllEvents(events: List<Event>)
+        fun showAllEvents(events: MutableList<Event>)
     }
 
     interface Presenter {
         fun getAllEvents()
-        fun onDestroy()
     }
 }

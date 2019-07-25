@@ -7,9 +7,9 @@ import com.example.ugsmart.model.News
 interface HomeContract {
 
     interface View {
-        fun showHomeNews(news: List<News>)
-        fun showHomeBanner(data: List<BannerData>)
-        fun showEventsAndSeminars(events: List<Event>)
+        fun showHomeNews(news: MutableList<News>)
+        fun showHomeBanner(data: BannerData)
+        fun showEventsAndSeminars(events: MutableList<Event>)
     }
 
     interface Presenter {

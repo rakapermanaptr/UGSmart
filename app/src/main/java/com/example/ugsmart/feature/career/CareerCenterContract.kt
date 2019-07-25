@@ -7,11 +7,10 @@ interface CareerCenterContract {
     interface View {
         fun showLoading()
         fun hideLoading()
-        fun showAllCareer(careers: List<News>)
+        fun showAllCareer(careers: MutableList<News>)
     }
 
     interface Presenter {
         fun getAllCareer()
-        fun onDestroy()
     }
 }

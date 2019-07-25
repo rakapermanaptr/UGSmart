@@ -17,15 +17,6 @@ import com.example.ugsmart.utils.invisible
 import com.example.ugsmart.utils.visible
 import kotlinx.android.synthetic.main.fragment_event.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class EventFragment : Fragment(), EventContract.View {
 
     private lateinit var presenter: EventPresenter
@@ -36,9 +27,7 @@ class EventFragment : Fragment(), EventContract.View {
 
         activity?.title = "Event and Seminar"
 
-        val service = ApiService.getClient().create(ApiRest::class.java)
-        val request = NewsRepoImpl(service)
-        presenter = EventPresenter(this, request)
+        presenter = EventPresenter(this)
         presenter.getAllEvents()
     }
 
@@ -52,17 +41,12 @@ class EventFragment : Fragment(), EventContract.View {
         rvNews.visible()
     }
 
-    override fun showAllEvents(events: List<Event>) {
+    override fun showAllEvents(events: MutableList<Event>) {
         listEvents.clear()
         listEvents.addAll(events)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rvNews.layoutManager = linearLayoutManager
         rvNews.adapter = EventsAdapter(requireContext(), events)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
     }
 
     override fun onCreateView(

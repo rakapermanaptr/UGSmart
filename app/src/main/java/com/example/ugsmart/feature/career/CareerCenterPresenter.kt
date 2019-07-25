@@ -1,44 +1,40 @@
 package com.example.ugsmart.feature.career
 
+import com.example.ugsmart.model.News
 import com.example.ugsmart.model.NewsResponse
 import com.example.ugsmart.model.repository.NewsRepoImpl
+import com.google.firebase.database.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subscribers.ResourceSubscriber
 import java.util.*
 
-class CareerCenterPresenter(
-    private val view: CareerCenterContract.View,
-    private val newsRepoImpl: NewsRepoImpl
-) : CareerCenterContract.Presenter {
+class CareerCenterPresenter(private val view: CareerCenterContract.View) : CareerCenterContract.Presenter {
 
-    val compositeDisposable = CompositeDisposable()
+    private var database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private var listCareer: MutableList<News> = mutableListOf()
 
     override fun getAllCareer() {
         view.showLoading()
-        compositeDisposable.addAll(newsRepoImpl.getAllCareer()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribeWith(object : ResourceSubscriber<NewsResponse>() {
-                override fun onComplete() {
-                    view.hideLoading()
-                }
+        var myRef: DatabaseReference = database.reference.child("career")
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
 
-                override fun onNext(t: NewsResponse) {
-                    view.showAllCareer(t.news)
-                }
+            }
 
-                override fun onError(t: Throwable?) {
-                    view.hideLoading()
-                    view.showAllCareer(Collections.emptyList())
-                }
+            override fun onDataChange(p0: DataSnapshot) {
+                listCareer.clear()
 
-            })
-        )
+                for (dataSnapshot in p0.children) {
+                    val data = dataSnapshot.getValue(News::class.java)
+                    listCareer.add(data!!)
+                }
+                view.showAllCareer(listCareer)
+                view.hideLoading()
+            }
+
+        })
     }
 
-    override fun onDestroy() {
-        compositeDisposable.dispose()
-    }
 }

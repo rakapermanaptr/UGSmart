@@ -5,11 +5,11 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Event(
-    val date: String,
-    val description: String,
-    val id: String,
-    val location: String,
-    val time: String,
-    val title: String,
-    val url: String
+    val date: String? = null,
+    val description: String? = null,
+    val id_event: String? = null,
+    val location: String? = null,
+    val time: String? = null,
+    val title: String? = null,
+    val url: String? = null
 ) : Parcelable

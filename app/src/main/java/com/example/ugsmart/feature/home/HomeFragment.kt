@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.bumptech.glide.Glide
 import com.example.ugsmart.R
 import com.example.ugsmart.adapter.HomeEventsAdapter
 import com.example.ugsmart.adapter.HomeNewsAdapter
@@ -19,6 +20,7 @@ import com.example.ugsmart.model.repository.NewsRepoImpl
 import com.example.ugsmart.network.ApiRest
 import com.example.ugsmart.network.ApiService
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.support.v4.act
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,30 +42,28 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         activity?.title = "UGSmart"
 
-        val service = ApiService.getClient().create(ApiRest::class.java)
-        val request = NewsRepoImpl(service)
-        presenter = HomePresenter(this, request)
+        presenter = HomePresenter(this)
         presenter.getHomeNews()
         presenter.getEventsAndSeminars()
         presenter.getHomeBanner()
 
     }
 
-    override fun showHomeBanner(data: List<BannerData>) {
-        val rectorImgUrl = data[0].rectorImg
-//        Glide.with(act)
-//            .load(rectorImgUrl)
-//            .into(imgRektor)
+    override fun showHomeBanner(data: BannerData) {
+        val rectorImgUrl = data.rectorImg
+        Glide.with(act)
+            .load(rectorImgUrl)
+            .into(imgRektor)
 
         Log.d("Data", "rector img : " + rectorImgUrl)
 
-        tvRectorName.text = data[0].rectorName
-        tvRectorGreeting.text = data[0].rectorGreeting
-        tvAnnouncementTitle.text = data[0].announcement_title
-        tvAnnouncement.text = data[0].announcement
+        tvRectorName.text = data.rectorName
+        tvRectorGreeting.text = data.rectorGreeting
+        tvAnnouncementTitle.text = data.announcement_title
+        tvAnnouncement.text = data.announcement
     }
 
-    override fun showHomeNews(news: List<News>) {
+    override fun showHomeNews(news: MutableList<News>) {
         listHomeNews.clear()
         listHomeNews.addAll(news)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
@@ -71,7 +71,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         rvUgNewsHome.adapter = HomeNewsAdapter(requireContext(), listHomeNews)
     }
 
-    override fun showEventsAndSeminars(events: List<Event>) {
+    override fun showEventsAndSeminars(events: MutableList<Event>) {
         listHomeEvents.clear()
         listHomeEvents.addAll(events)
         val linearLayoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
