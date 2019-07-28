@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ugsmart.R
+import com.example.ugsmart.feature.detail.DetailNewsActivity
 import com.example.ugsmart.model.News
 import kotlinx.android.synthetic.main.item_home.view.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class HomeNewsAdapter(private val context: Context, private val news: List<News>) :
@@ -35,10 +37,8 @@ class HomeNewsAdapter(private val context: Context, private val news: List<News>
             itemView.tvHomeTitleNews.text = news.title
             itemView.tvHomeNews.text = news.description
 
-            Log.i("data", "title : " + news.title)
-
             itemView.setOnClickListener {
-                itemView.context.toast("News : " + news.title)
+                itemView.context.startActivity<DetailNewsActivity>("data" to news)
             }
         }
 

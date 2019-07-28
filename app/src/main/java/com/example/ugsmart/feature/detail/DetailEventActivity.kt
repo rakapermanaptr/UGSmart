@@ -28,6 +28,7 @@ class DetailEventActivity : AppCompatActivity() {
         tvTitle.text = data.title
         tvDate.text = data.date
         tvTime.text = data.time
+        tvLocation.text = data.location
         tvDescription.text = data.description
         Glide.with(this)
             .load(data.url)

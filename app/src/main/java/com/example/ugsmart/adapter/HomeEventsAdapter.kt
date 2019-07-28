@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ugsmart.R
+import com.example.ugsmart.feature.detail.DetailEventActivity
 import com.example.ugsmart.model.Event
 import kotlinx.android.synthetic.main.item_home_events.view.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class HomeEventsAdapter(private val context: Context, private val events: List<Event>) :
@@ -38,7 +40,7 @@ class HomeEventsAdapter(private val context: Context, private val events: List<E
             Log.i("data", "title : " + event.title)
 
             itemView.setOnClickListener {
-                itemView.context.toast("Event " + event.title)
+                itemView.context.startActivity<DetailEventActivity>("data" to event)
             }
         }
 
