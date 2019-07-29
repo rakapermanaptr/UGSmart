@@ -13,10 +13,12 @@ import com.bumptech.glide.Glide
 import com.example.ugsmart.R
 import com.example.ugsmart.adapter.HomeEventsAdapter
 import com.example.ugsmart.adapter.HomeNewsAdapter
+import com.example.ugsmart.feature.detail.DetailSambutanActivity
 import com.example.ugsmart.model.BannerData
 import com.example.ugsmart.model.Event
 import com.example.ugsmart.model.News
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.support.v4.startActivity
 
 class HomeFragment : Fragment(), HomeContract.View {
 
@@ -48,6 +50,10 @@ class HomeFragment : Fragment(), HomeContract.View {
         tvRectorGreeting.text = data.rectorGreeting
         tvAnnouncementTitle.text = data.announcement_title
         tvAnnouncement.text = data.announcement
+
+        layoutSambutan.setOnClickListener {
+            startActivity<DetailSambutanActivity>("data" to data)
+        }
     }
 
     override fun showHomeNews(news: MutableList<News>) {

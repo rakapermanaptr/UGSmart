@@ -13,6 +13,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".feature.detail.DetailSambutanActivity">
+        </activity>
         <activity android:name=".feature.detail.DetailCareerActivity">
         </activity>
         <activity android:name=".feature.detail.DetailEventActivity">
