@@ -16,21 +16,8 @@ import com.example.ugsmart.adapter.HomeNewsAdapter
 import com.example.ugsmart.model.BannerData
 import com.example.ugsmart.model.Event
 import com.example.ugsmart.model.News
-import com.example.ugsmart.model.repository.NewsRepoImpl
-import com.example.ugsmart.network.ApiRest
-import com.example.ugsmart.network.ApiService
 import kotlinx.android.synthetic.main.fragment_home.*
-import org.jetbrains.anko.support.v4.act
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class HomeFragment : Fragment(), HomeContract.View {
 
     private lateinit var presenter: HomePresenter
@@ -51,7 +38,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun showHomeBanner(data: BannerData) {
         val rectorImgUrl = data.rectorImg
-        Glide.with(act)
+        Glide.with(this!!.activity!!)
             .load(rectorImgUrl)
             .into(imgRektor)
 

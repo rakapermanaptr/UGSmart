@@ -1,13 +1,7 @@
 package com.example.ugsmart.feature.home
 
-import android.util.Log
 import com.example.ugsmart.model.*
-import com.example.ugsmart.model.repository.NewsRepoImpl
 import com.google.firebase.database.*
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.subscribers.ResourceSubscriber
 
 class HomePresenter(private val view: HomeContract.View) : HomeContract.Presenter {
 

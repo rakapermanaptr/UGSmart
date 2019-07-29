@@ -83,9 +83,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_careerCenter -> {
                 fragment = CareerCenterFragment()
             }
-            R.id.nav_reminder -> {
-                toast("Upcoming Feature")
-            }
             R.id.nav_aboutUs -> {
                 fragment = AboutFragment()
             }

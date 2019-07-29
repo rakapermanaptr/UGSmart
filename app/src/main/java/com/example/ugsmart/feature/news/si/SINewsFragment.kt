@@ -11,9 +11,6 @@ import android.view.ViewGroup
 import com.example.ugsmart.R
 import com.example.ugsmart.adapter.NewsAdapter
 import com.example.ugsmart.model.News
-import com.example.ugsmart.model.repository.NewsRepoImpl
-import com.example.ugsmart.network.ApiRest
-import com.example.ugsmart.network.ApiService
 import com.example.ugsmart.utils.invisible
 import com.example.ugsmart.utils.visible
 import kotlinx.android.synthetic.main.fragment_si__news.*

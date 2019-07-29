@@ -1,14 +1,7 @@
 package com.example.ugsmart.feature.news.ti
 
 import com.example.ugsmart.model.News
-import com.example.ugsmart.model.NewsResponse
-import com.example.ugsmart.model.repository.NewsRepoImpl
 import com.google.firebase.database.*
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.subscribers.ResourceSubscriber
-import java.util.*
 
 class TINewsPresenter(private val view: TINewsContract.View) : TINewsContract.Presenter {
 

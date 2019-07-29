@@ -4,9 +4,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.ugsmart.R
 import com.example.ugsmart.model.Report
-import com.example.ugsmart.model.repository.ReportRepoImpl
-import com.example.ugsmart.network.ApiRest
-import com.example.ugsmart.network.ApiService
 import kotlinx.android.synthetic.main.activity_report.*
 import org.jetbrains.anko.toast
 import java.time.LocalDateTime

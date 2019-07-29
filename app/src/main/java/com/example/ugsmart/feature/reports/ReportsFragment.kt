@@ -11,9 +11,6 @@ import com.example.ugsmart.R
 import com.example.ugsmart.adapter.ReportsAdapter
 import com.example.ugsmart.feature.report.ReportActivity
 import com.example.ugsmart.model.Report
-import com.example.ugsmart.model.repository.ReportRepoImpl
-import com.example.ugsmart.network.ApiRest
-import com.example.ugsmart.network.ApiService
 import com.example.ugsmart.utils.invisible
 import com.example.ugsmart.utils.visible
 import kotlinx.android.synthetic.main.fragment_reports.*
