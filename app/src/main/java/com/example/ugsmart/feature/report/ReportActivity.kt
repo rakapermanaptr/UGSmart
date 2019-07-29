@@ -29,8 +29,9 @@ class ReportActivity : AppCompatActivity(), ReportContract.View {
             val subject = edtSubject.text.toString()
             val complaint = edtComplaint.text.toString()
             val location = edtLocation.text.toString()
+            val note = ""
 
-            report = Report(localDate.toString(), fullname, npm, subject, complaint, location)
+            report = Report(localDate.toString(), fullname, npm, subject, complaint, location, note)
 
             presenter.postReport(report)
 
